@@ -1,0 +1,11 @@
+https://github.com/dmatavel/ft_printf/blob/main/ft_printf.c
+
+https://github.com/Surfi89/ft_printf/blob/main/src/ft_printf.c
+
+https://csnotes.medium.com/ft-printf-tutorial-42project-f09b6dc1cd0e
+
+
+
+https://linux.die.net/man/3/va_start
+
+https://courses.cs.washington.edu/courses/cse451/98sp/Section/makeintro.html
