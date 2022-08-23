@@ -9,6 +9,7 @@
 # define UPPER_HEX_BASE "0123456789ABCDEF"
 
 int	ft_printf(const char *format, ...);
+int	ft_format(va_list args, const char format);
 int	ft_print_char(char c);
 int	ft_print_str(char *str);
 int	ft_print_ptr(uintptr_t num);

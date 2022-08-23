@@ -1,0 +1,9 @@
+Make.exe -f C:\Users\Paul\Desktop\42kl\Cursus\Libft --dry-run --always-make --keep-going --print-directory
+Make.exe: Entering directory `c:/Users/Paul/Desktop/ft_printf'
+Make.exe: Leaving directory `c:/Users/Paul/Desktop/ft_printf'
+ 
+Make.exe: C:\Users\Paul\Desktop\42kl\Cursus\Libft: No such file or directory
+Make.exe: *** No rule to make target `C:\Users\Paul\Desktop\42kl\Cursus\Libft'.
+Make.exe: Failed to remake makefile `C:\Users\Paul\Desktop\42kl\Cursus\Libft'.
+Make.exe: *** No targets specified and no makefile found.  Stop.
+
