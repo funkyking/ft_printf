@@ -1,43 +1,49 @@
 #include "ft_printf.h"
+#include "libft/libft.h"
 
-long long int   ft_count_digit(long long num, int base) //It is used to count digits + newer macros
+int ft_ptr_scope(uintptr_t n)
 {
-	long long int   ret;
-	long long int   digit;
+    int count;
 
-	ret = 0;
-	digit = num;
-	if (digit == 0 || digit < 0)
-		ret++;
-	while (digit != 0)
-	{
-			digit /= base;
-			ret++;
-	}
-	return (ret);
+    count = 0;
+    while (n != 0)
+    {
+        count++;
+        n = n / 16;
+    }
+    return (count);
 }
 
-static void ft_print_long_hex(uintptr_t num)
+void    ft_puts_ptr(uintptr_t n)
 {
-    char    *base;
-
-    base = LOWER_HEX_BASE;
-    if (num >= 16)
-        ft_print_long_hex(num / 16);
-    if (num > 10)
-        ft_putchar_fd(base[num % 16], 1);
+    if (n >= 16)
+    {
+        ft_puts_ptr(n / 16);
+        ft_puts_ptr(n % 16);
+    }
     else
-        ft_putchar_fd(base[num % 16], 1);
+    {
+        if (n <= 9)
+        {
+            ft_putchar_fd((n + '0'), 1);
+        }
+        else
+        {
+            ft_putchar_fd((n - 10 + 'a'), 1);
+        }
+    }
 }
 
-int ft_print_ptr(uintptr_t num)
+int ft_print_ptr(unsigned long long ptr)
 {
-    char *prefix;
+    int len;
 
-    prefix = "0x";
-    if ((void *)num == NULL)
-        return (write(1, "0x0", 3));
-    ft_putstr_fd(prefix, 1);
-    ft_print_long_hex(num);
-    return (ft_count_digit(num, 16) + ft_strlen(prefix));
+    len = 0;
+    len += write(1, "0x", 2);
+    if (ptr == 0)
+    {
+        ft_puts_ptr(ptr);
+        len += ft_ptr_scope(ptr);
+    }
+    return (len);
 }

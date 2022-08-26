@@ -1,8 +1,7 @@
 SRCS =	ft_printf.c \
-		ft_printchar.c \
-		ft_print_str.c \
+		ft_print_char.c \
+		ft_functions.c \
 		ft_print_ptr.c \
-		ft_print_int.c \
 		ft_print_unsigned.c \
 		ft_print_hex.c \
 

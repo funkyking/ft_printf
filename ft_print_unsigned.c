@@ -1,35 +1,51 @@
 #include "ft_printf.h"
+#include "libft/libft.h"
+#include <stdlib.h>
 
-static void	ft_put_unsigned_nbr_fd(unsigned int n, int fd);
-
-long long int	ft_count_digit(long long int num, int base)
+int	ft_num_scope(unsigned int   n)
 {
-	long long int	ret;
-	long long int	digit;
+	int	len;
 
-	ret = 0;
-	digit = num;
-	if (digit == 0 || digit < 0)
-		ret++;
-	while (digit != 0)
+	len = 0;
+	while (n != 0)
 	{
-			digit /= base;
-			ret++;
+		len++;
+		n = n / 10;
 	}
-	return (ret);
+	return (len);
 }
 
-int	ft_print_unsigned_int(unsigned int n)
+char	*ft_uitoa(unsigned int	n)
 {
-	ft_put_unsigned_nbr_fd(n, 1);
-	return (ft_count_digit(n, 10));
+	char		*num;
+	int			len;
+
+	len = ft_num_scope(n);
+	num = ft_calloc((len + 1), sizeof(char));
+	if (!num)
+        return (NULL);
+	num[len] = '\0';
+	while (len)
+	{
+		num[--len] = n % 10 + 48;
+		n = n / 10;
+	}
+	return (num);
 }
 
-void	ft_put_unsigned_nbr_fd(unsigned int n, int fd)
+int	ft_print_unsigned(unsigned int n)
 {
-	if (fd < 0)
-		return ;
-	if (n > 9)
-		ft_put_unsigned_nbr_fd(n / 10, fd);
-	ft_putchar_fd(n % 10 + 48, fd);
+	int		len;
+	char	*num;
+
+	len = 0;
+	if (n == 0)
+		len += write(1, "0", 1);
+	else
+	{
+		num = ft_uitoa(n);
+		len += ft_print_str(num);
+		free(num);
+	}
+	return (len);
 }
