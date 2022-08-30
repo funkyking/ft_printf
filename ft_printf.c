@@ -27,6 +27,7 @@ int	ft_formats(va_list args, const char *format, int *len)
 		else
 			*len += ft_print_char(*format++);
 	}
+	return (*len);
 }
 
 int	ft_printf(const char *format, ...)
