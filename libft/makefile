@@ -6,7 +6,7 @@
 #    By: panand <panand@student.42kl.edu.my>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 23:08:46 by panand            #+#    #+#              #
-#    Updated: 2022/07/24 19:46:47 by panand           ###   ########.fr        #
+#    Updated: 2022/08/30 09:42:06 by panand           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,8 @@ SRCS		= 	ft_atoi \
 				ft_substr \
 				ft_toupper \
 				ft_tolower \
+				ft_putstr \
+				ft_uitoa \
 
 OBJS = $(SRCS:.c=.o)
 

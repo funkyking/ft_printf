@@ -37,7 +37,7 @@ int	ft_printf(const char *format, ...)
 
 	i = 0;
 	va_start(args, format);
-	ft_printf(args, format, &i);
+	ft_formats(args, format, &i);
 	va_end(args);
 	return (i);
 }

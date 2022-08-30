@@ -5,11 +5,13 @@ int ft_putstr(const char *str)
     int len;
     int ret;
 
-    ret = ft_strlen(str)
+    ret = ft_strlen(str);
     len = 0;
-    while (str[len])
+    if (!str)
     {
-        ft_print_char(str[len]);
+        ret += ft_putstr("(null)");
         len++;
     }
+	write (1, str, ret);
+	return (ret);
 }
