@@ -1,18 +1,6 @@
 #include "ft_printf.h"
 #include "libft/libft.h"
 
-void	ft_puts_str(char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
-}
-
 int	ft_print_str(char *s)
 {
 	int	i;
@@ -20,7 +8,7 @@ int	ft_print_str(char *s)
 	i = 0;
 	if (s == NULL)
 	{
-		ft_puts_str("(null)");
+		ft_putstr("(null)");
 		return (6);
 	}
 	while (s[i])

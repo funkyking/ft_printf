@@ -1,49 +1,27 @@
 #include "ft_printf.h"
 #include "libft/libft.h"
 
-int ft_ptr_scope(uintptr_t n)
+int ft_puts_ptr(unsigned long long n)
 {
-    int count;
+    int len;
+    char    *hex;
 
-    count = 0;
-    while (n != 0)
+    hex = "0123456789abcdef";
+    len = 0;
+    if (n > 15)
     {
-        count++;
-        n = n / 16;
+        len += ft_puts_ptr(n / 16);
     }
-    return (count);
+    len += ft_print_char(hex[n % 16]);
+    return (len);
 }
 
-void    ft_puts_ptr(uintptr_t n)
-{
-    if (n >= 16)
-    {
-        ft_puts_ptr(n / 16);
-        ft_puts_ptr(n % 16);
-    }
-    else
-    {
-        if (n <= 9)
-        {
-            ft_putchar_fd((n + '0'), 1);
-        }
-        else
-        {
-            ft_putchar_fd((n - 10 + 'a'), 1);
-        }
-    }
-}
-
-int ft_print_ptr(unsigned long long ptr)
+int ft_print_ptr(unsigned long long n)
 {
     int len;
 
-    len = 0;
-    len += write(1, "0x", 2);
-    if (ptr == 0)
-    {
-        ft_puts_ptr(ptr);
-        len += ft_ptr_scope(ptr);
-    }
+    len = 2;
+    ft_putstr("0x");
+    len += ft_puts_ptr(n);
     return (len);
 }

@@ -16,6 +16,7 @@ CFLAGS 		= 	-Wall -Wextra -Werror -c
 AR			= 	ar rcs
 
 SRCS		= 	ft_atoi \
+				ft_putchar \
 				ft_bzero \
 				ft_calloc \
 				ft_isalnum \
@@ -36,6 +37,7 @@ SRCS		= 	ft_atoi \
 				ft_putchar_fd \
 				ft_putendl_fd \
 				ft_putnbr_fd \
+				ft_putnbr_base \
 				ft_putstr_fd \
 				ft_itoa \
 				ft_strmapi \

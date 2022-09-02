@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int	ft_formats(va_list args, const char *format, int *len)
+static void	ft_formats(va_list args, const char *format, int *len)
 {
 	while (*format)
 	{
@@ -27,7 +27,7 @@ int	ft_formats(va_list args, const char *format, int *len)
 		else
 			*len += ft_print_char(*format++);
 	}
-	return (*len);
+	//return (*len);
 }
 
 int	ft_printf(const char *format, ...)
