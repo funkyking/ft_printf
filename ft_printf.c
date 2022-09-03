@@ -17,9 +17,9 @@ static void	ft_formats(va_list args, const char *format, int *len)
 			else if (format[1] == 'u')
 				*len += ft_print_unsigned(va_arg(args, unsigned int));
 			else if (format[1] == 'x')
-				*len += ft_hex_low(va_arg(args, unsigned long long));
+				*len += ft_hex_lowercase(va_arg(args, unsigned long long));
 			else if (format[1] == 'X')
-				*len += ft_hex_up(va_arg(args, unsigned long long));
+				*len += ft_hex_uppercase(va_arg(args, unsigned long long));
 			else if (format[1] == '%')
 				*len += ft_print_pct();
 			format += 2;
@@ -27,7 +27,6 @@ static void	ft_formats(va_list args, const char *format, int *len)
 		else
 			*len += ft_print_char(*format++);
 	}
-	//return (*len);
 }
 
 int	ft_printf(const char *format, ...)

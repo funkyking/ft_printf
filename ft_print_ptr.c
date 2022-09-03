@@ -12,7 +12,7 @@ int ft_puts_ptr(unsigned long long n)
     {
         len += ft_puts_ptr(n / 16);
     }
-    len += ft_print_char(hex[n % 16]);
+    len += ft_printchar(hex[n % 16]);
     return (len);
 }
 
