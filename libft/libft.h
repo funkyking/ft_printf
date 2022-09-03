@@ -39,7 +39,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strnstr(const char *big, const char *little, size_t blen);
 char	**ft_split(char const *s, char c);
 char	*ft_strrchr(const char *string, int c);
-int		ft_strlen(char const *str);
+int     ft_strlen(char const *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int     ft_putstr(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);

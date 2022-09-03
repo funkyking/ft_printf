@@ -1,7 +1,7 @@
 #include "ft_printf.h"
 #include "libft/libft.h"
 
-int	ft_hex_lowercase(unsigned long long n)
+int	ft_hex_lowercase(unsigned int n)
 {
 	int		ret;
 	char	*hex;
@@ -14,7 +14,7 @@ int	ft_hex_lowercase(unsigned long long n)
 	return (ret);
 }
 
-int	ft_hex_uppercase(unsigned long long n)
+int	ft_hex_uppercase(unsigned int n)
 {
 	int		ret;
 	char	*hex;

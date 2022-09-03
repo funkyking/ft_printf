@@ -1,7 +1,7 @@
 #include "ft_printf.h"
 #include "libft/libft.h"
 
-int	ft_print_str(char *s)
+int	ft_print_str(const char *s)
 {
 	int	i;
 
@@ -30,9 +30,10 @@ int	ft_print_nbr(int n)
 	free(num);
 	return (len);
 }
-
+/*
 int	ft_print_pct(void)
 {
 	write(1, "%", 1);
 	return (1);
 }
+*/

@@ -22,7 +22,7 @@ static void	ft_format(va_list args, const char *format, int *ret)
 			else if (format[1] == 'X')
 				*ret += ft_hex_uppercase(va_arg(args, unsigned long long));
 			else if (format[1] == '%')
-				*ret += ft_print_pct();
+				*ret += ft_printchar('%');
 			format += 2;
 		}
 		else
