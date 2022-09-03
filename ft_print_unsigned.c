@@ -1,6 +1,5 @@
 #include "ft_printf.h"
 #include "libft/libft.h"
-#include <stdlib.h>
 
 int	ft_print_unsigned(unsigned int n)
 {
