@@ -7,7 +7,7 @@ static void	ft_formats(va_list args, const char *format, int *len)
 		if ((format[0] == '%') && (format[1] != '\0'))
 		{
 			if (format[1] == 'c')
-				*len += ft_print_char(va_arg(args, int));
+				*len += ft_printchar(va_arg(args, int));
 			else if (format[1] == 's')
 				*len += ft_print_str(va_arg(args, char *));
 			else if (format[1] == 'p')
@@ -25,7 +25,7 @@ static void	ft_formats(va_list args, const char *format, int *len)
 			format += 2;
 		}
 		else
-			*len += ft_print_char(*format++);
+			*len += ft_printchar(*format++);
 	}
 }
 
